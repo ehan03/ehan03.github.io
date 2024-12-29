@@ -42,13 +42,13 @@ redirect_from:
 
 ## Work Experience
 * Present: Incoming Labs Fellow at Farallon Capital Management
-  * Farallon Labs team
   * San Francisco, CA
+  * Farallon Labs team
   * Joining full-time in 2025 to contribute to the firm's data science capabilities and AI applications to investment research
 
 * Summer 2024: Data Science Intern at Point72 Asset Management
-  * Market Intelligence (Proprietary Research) team
   * New York, NY
+  * Market Intelligence (Proprietary Research) team
   * Developed a systematic time series forecasting framework for use cases involving alternative data sources relevant to the healthcare sector
 
 * Summer 2023: Data Science Intern at Castleton Commodities International
@@ -57,9 +57,11 @@ redirect_from:
 
 * Summer 2022: Trading Analytics Intern at National Life Group
   * Montpelier, VT
+  * Python scripts to automate data cleaning and loading, some Streamlit dashboards for visualization
  
-* AKKO, Data Science Intern, Winter/Spring 2022
+* Winter/Spring 2022: AKKO, Data Science Intern
   * New Haven, CT / Remote
+  * A lot of SQL
 
 ## Teaching
 * Spring 2024: Undergraduate Learning Assistant
