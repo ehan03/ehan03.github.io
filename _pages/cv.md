@@ -16,9 +16,9 @@ redirect_from:
     * S&DS 230 - Data Exploration and Analysis
     * S&DS 241 - Probability Theory
     * S&DS 242 - Theory of Statistics
-    * S&DS 317 - Applied Machine Learning and Causal Inference
+    * _S&DS 317 - Applied Machine Learning and Causal Inference_
     * S&DS 363 - Multivariate Statistics for Social Sciences
-    * S&DS 492 - Senior Project
+    * _S&DS 492 - Senior Project_
     * CPSC 100 - Introduction to Computing and Programming
     * CPSC 223 - Data Structures and Programming Techniques
     * CPSC 365 - Algorithms
@@ -32,13 +32,15 @@ redirect_from:
     * ECON 117 - Introduction to Data Analysis and Econometrics
   * Graduate Coursework:
     * BIS 567 - Bayesian Statistics
-    * S&DS 551 - Stochastic Processes
+    * _S&DS 551 - Stochastic Processes_
     * S&DS 600 - Advanced Probability (Measure Theoretic)
     * S&DS 612 - Linear Models
     * S&DS 625 - Statistical Case Studies
     * S&DS 631 - Optimization and Computation
     * S&DS 661 - Data Analysis
     * S&DS 665 - Intermediate Machine Learning
+  
+Italics denote courses enrolled in Spring 2025.
 
 ## Work Experience
 * Present: Incoming Labs Fellow at Farallon Capital Management
