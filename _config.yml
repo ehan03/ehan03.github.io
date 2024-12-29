@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Eugene Han"
 title_separator          : "-"
 name                     : &name "Eugene Han"
-description              : &description "personal description"
+description              : &description "Personal website"
 url                      : https://ehan03.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "ehan03/ehan03.github.io"
@@ -24,8 +24,8 @@ author:
   avatar           : "profile.png"
   name             : "Eugene Han"
   pronouns         : # example: "she/her"  
-  bio              : "Senior at Yale studying statistics"
-  location         : "Earth"
+  bio              : "Student at Yale, incoming Labs Fellow at Farallon"
+  location         : "California"
   employer         : "Yale University"
   uri              : # URL
   email            : # email
@@ -45,7 +45,7 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           : "ehan03"
-  kaggle           : # Username  
+  kaggle           : "ehan2025"  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
@@ -56,7 +56,7 @@ author:
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : # Username
+  instagram        : "eugene__han"
   lastfm           : # Username
   linkedin         : "e-han"
   mastodon         : # URL
