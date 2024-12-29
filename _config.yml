@@ -24,7 +24,7 @@ author:
   avatar           : "profile.png"
   name             : "Eugene Han"
   pronouns         : # example: "she/her"  
-  bio              : "Student at Yale, incoming Labs Fellow at Farallon"
+  bio              : #
   location         : "California"
   employer         : "Yale University"
   uri              : # URL
