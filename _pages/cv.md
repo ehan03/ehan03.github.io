@@ -41,16 +41,25 @@ redirect_from:
     * S&DS 665 - Intermediate Machine Learning
 
 ## Work Experience
-* Farallon Capital Management, Incoming Labs Fellow
-  * Joining the Farallon Labs team full-time in 2025
+* Present: Incoming Labs Fellow at Farallon Capital Management
+  * Farallon Labs team
+  * San Francisco, CA
+  * Joining full-time in 2025 to contribute to the firm's data science capabilities and AI applications to investment research
 
-* Point72 Asset Management, Data Science Intern, Summer 2024
+* Summer 2024: Data Science Intern at Point72 Asset Management
+  * Market Intelligence (Proprietary Research) team
+  * New York, NY
+  * Developed a systematic time series forecasting framework for use cases involving alternative data sources relevant to the healthcare sector
 
-* Castleton Commodities International, Data Science Intern, Summer 2023
+* Summer 2023: Data Science Intern at Castleton Commodities International
+  * Stamford, CT
+  * Worked on a LLM-powered platform for ingestion, storage, and downstream usage of unstructured data sources to support the firm's trading activities in various energy markets as well as non-trading functions like human resources and compliance
 
-* National Life Group, Trading Analytics Intern, Summer 2022
+* Summer 2022: Trading Analytics Intern at National Life Group
+  * Montpelier, VT
  
 * AKKO, Data Science Intern, Winter/Spring 2022
+  * New Haven, CT / Remote
 
 ## Teaching
 * Spring 2024: Undergraduate Learning Assistant
@@ -63,6 +72,8 @@ redirect_from:
   
 ## Activities/Leadership
 * Statistics and Data Science Department Student Advisory Committee
+  * Served on the committee since sophomore year, organizing events such as game nights and socials to connect department faculty and students in the major
  
 * Yale Entrepreneurial Society (YES)
-  * Data Analyst on the YES Internships team
+  * Contributed as a data analyst to the YES Internship Program, a platform connecting undergraduate students across the United States with opportunities to intern at partnered startups
+  * Worked on projects ranging from analyzing and visualizing student application data with respect to diversity and career interests to applying natural language processing techniques to applicant resumes and startup job descriptions
