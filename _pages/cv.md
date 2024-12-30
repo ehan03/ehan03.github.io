@@ -59,11 +59,11 @@ Italics denote courses enrolled in Spring 2025.
 
 * Summer 2022: Trading Analytics Intern at National Life Group
   * Montpelier, VT
-  * Python scripts to automate data cleaning and loading, some Streamlit dashboards for visualization
+  * Python scripts to automate data cleaning and loading of fixed income securities data, some Streamlit dashboards for visualization of delinquency rates and other time series pulled from the Federal Reserve Economic Data API
  
-* Winter/Spring 2022: AKKO, Data Science Intern
+* Winter/Spring 2022: Data Science Intern at AKKO
   * New Haven, CT / Remote
-  * A lot of SQL
+  * A lot of SQL and visualization for device claims and partner program data using Google BigQuery and Data Studio
 
 ## Teaching
 * Spring 2024: Undergraduate Learning Assistant
