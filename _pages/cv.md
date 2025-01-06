@@ -11,7 +11,7 @@ redirect_from:
 
 ## Education
 * Joint B.S./M.A. in Statistics, Yale University, September 2021 - May 2025
-  * GPA: 3.98/4.00
+  * GPA: 3.96/4.00
   * Undergraduate Coursework:
     * S&DS 230 - Data Exploration and Analysis
     * S&DS 241 - Probability Theory
@@ -29,7 +29,6 @@ redirect_from:
     * MATH 225 - Linear Algebra and Matrix Theory
     * MATH 244 - Discrete Mathematics
     * MATH 255 - Real Analysis
-    * ECON 117 - Introduction to Data Analysis and Econometrics
   * Graduate Coursework:
     * BIS 567 - Bayesian Statistics
     * _S&DS 551 - Stochastic Processes_
