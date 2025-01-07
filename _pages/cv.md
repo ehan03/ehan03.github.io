@@ -50,14 +50,16 @@ Italics denote courses enrolled in Spring 2025.
 * Summer 2024: Data Science Intern at Point72 Asset Management
   * New York, NY
   * Market Intelligence (Proprietary Research) team
-  * Developed a systematic time series forecasting framework for use cases involving alternative data sources relevant to the healthcare sector
+  * Developed a systematic time series forecasting framework for use cases involving alternative data sources relevant to pharmaceutical tickers and more generally, the healthcare sector
+  * Got to go to a Mets game, an intern cooking class, and capped off the summer with a Chelsea Market scavenger hunt with the MI Analytics team
 
 * Summer 2023: Data Science Intern at Castleton Commodities International
   * Stamford, CT
   * Worked on a LLM-powered platform for ingestion, storage, and downstream usage of unstructured data sources to support the firm's trading activities in various energy markets as well as non-trading functions like human resources and compliance
+  * A lot of beach volleyball and kickball with the occasional NYC day trip
 
 * Summer 2022: Trading Analytics Intern at National Life Group
-  * Montpelier, VT
+  * Montpelier, VT / Remote
   * Python scripts to automate data cleaning and loading of fixed income securities data, some Streamlit dashboards for visualization of delinquency rates and other time series pulled from the Federal Reserve Economic Data API
  
 * Winter/Spring 2022: Data Science Intern at AKKO
