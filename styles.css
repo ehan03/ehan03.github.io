@@ -204,6 +204,48 @@ article.writings li+li {
     margin-top: 6px;
 }
 
+article.writings a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 0.5px solid rgba(74, 111, 159, 0.35);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+article.writings a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+article.writings code {
+    font-family: var(--mono);
+    font-size: 0.92em;
+    background: rgba(122, 120, 114, 0.1);
+    border: 0.5px solid var(--rule);
+    border-radius: 2px;
+    padding: 0 4px;
+}
+
+.post-figure {
+    max-width: 700px;
+    margin: 18px auto 22px;
+}
+
+.post-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 0.5px solid var(--rule);
+}
+
+.post-figure figcaption {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+    text-align: center;
+}
+
 .post-row {
     display: grid;
     grid-template-columns: 100px 1fr auto;

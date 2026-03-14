@@ -12,24 +12,78 @@
     <div class="site-wrap">
         <section class="hero hero--single">
             <div class="main-nav" aria-label="post navigation">
-                <a href="../index.html">home</a>
+                <a href="../">home</a>
             </div>
             <div>
                 <h1 class="hero-name">Curating and maintaining a novel dataset for Steam download bandwidth usage</h1>
-                <p class="hero-role">Ephemeral data, scraping Wayback Machine, and ongoing ingestion</p>
+                <p class="hero-role">Ephemeral data, scraping Wayback Machine, pestering a researcher, and ongoing
+                    ingestion</p>
                 <p class="post-meta">Published <time datetime="2026-03-13">13 Mar 2026</time></p>
             </div>
         </section>
 
         <article class="writings">
-            <p>This is the inaugural post, still need to actually do the write-up</p>
+            <p>The Steam store website publishes a surprising amount of aggregate data about the platform, including
+                <a href="https://store.steampowered.com/charts" target="_blank" rel="noopener">live player counts</a>
+                and
+                <a href="https://store.steampowered.com/stats/content/" target="_blank" rel="noopener">global bandwidth
+                    usage</a>. While sites like <a href="https://steamdb.info/" target="_blank"
+                    rel="noopener">SteamDB</a> and <a href="https://steamcharts.com/" target="_blank"
+                    rel="noopener">Steam Charts</a> track the former, there doesn't seem to be a public dataset for the
+                latter with long historical coverage. So, in summer 2024, I set out to start curating one myself.
+            </p>
+
+            <figure class="post-figure">
+                <img src="../assets/images/posts/steam-dataset/steam_stats_page.png"
+                    alt="Steam stats page showing global bandwidth usage data" loading="lazy" decoding="async" />
+                <figcaption>Steam content stats page, which exposes global bandwidth usage metrics over the last 48
+                    hours.</figcaption>
+            </figure>
+
+            <p>The data behind this chart is loaded dynamically from a JSONP endpoint hosted on a third-party CDN.
+                Each request returns regional usage at 10-minute granularity, providing a near
+                real-time view of download traffic across Steam's global infrastructure. However, the dataset comes with
+                a few quirks. The endpoint only exposes a rolling 48-hour window of observations, and requests include
+                a cache-busting <code>?v=</code> parameter that prevents retrieval of historical snapshots. In
+                practice, this means older data is generally inaccessible unless a stale CDN cache happens to persist
+                it. As a result, the bandwidth data is fundamentally ephemeral&mdash;if it isn't captured in real time,
+                it effectively disappears.</p>
+
+            <p>Since June 20, 2024, I've been running an hourly scraping routine to capture new data points as they
+                become available and append them to a growing CSV file by leveraging/abusing GitHub Actions (a.k.a. the
+                poor man's cron); the source code can be found in my <a
+                    href="https://github.com/ehan03/Steam-Time-Series" target="_blank" rel="noopener">GitHub
+                    repository</a>. Not the best practice, but it gets the job done.
+            </p>
+
+            <p>To backfill some historical data, I first used the Wayback Machine CDX API to retrieve archived versions
+                of both the stats page and the JSONP endpoint. While I did get some value out of this, the snapshots
+                were often spotty and most of the URLs simply error out. I then stumbled across <a
+                    href="https://steam.iijlab.net/" target="_blank" rel="noopener">the work</a> of Christoff Visser and
+                Romain Fontugne of the IIJ Research Lab in Tokyo, Japan, who open-sourced their own dataset of Steam
+                traffic spanning February 2023 to October 2023 with great coverage quality (please check out <a
+                    href="https://pam2024.cs.northwestern.edu/pdfs/paper-08.pdf" target="_blank" rel="noopener">their
+                    paper</a> on Steam's CDN infrastructure, really interesting and they do a cool case study looking at
+                traffic and cache load trends during the release of CS2). Huge thanks to them for making their data
+                available!</p>
+
+            <figure class="post-figure">
+                <img src="../assets/images/posts/steam-dataset/my_dataset.png"
+                    alt="Visualizing my curated Steam dataset" loading="lazy" decoding="async" />
+                <figcaption>Plotly visualization of some of the data I've collected so far.</figcaption>
+            </figure>
+
+            <p>I've also released my combined dataset on <a
+                    href="https://www.kaggle.com/datasets/ehan2025/steam-download-bandwidth-usage-by-world-region"
+                    target="_blank" rel="noopener">Kaggle</a>, which updates weekly. Feel free to use it for literally
+                anything. Also please let me know if you have historical data that you'd be willing to share to help
+                fill in the gaps.</p>
         </article>
 
-        <footer>
-            <span>vibe coded, idk how to web dev</span>
-            <span>Last updated: Mar 13, 2026</span>
-        </footer>
+        <footer id="site-footer"></footer>
     </div>
+
+    <script src="../footer.js"></script>
 </body>
 
 </html>

@@ -44,7 +44,8 @@
     const TOP_PAD = 14;
     const BOTTOM_PAD = 8;
     const PEG_SHARE = 0.5;
-    const PEG_TIGHTEN = 0.75;
+    const PEG_TIGHTEN_X = 0.9;
+    const PEG_TIGHTEN_Y = 0.9;
     const GAP = 5;
     const FUNNEL_GRAVITY = 0.058;
     const FUNNEL_DRAG_X = 0.972;
@@ -86,7 +87,7 @@
         return playTop() + playHeight() * PEG_SHARE;
     }
     function binTop() {
-        return pegBottom() + GAP;
+        return pegFieldBottom() + GAP;
     }
     function binBottom() {
         return playBottom();
@@ -95,10 +96,16 @@
         return Math.min((W - 28) / (BINS + 1.5), 15);
     }
     function colW() {
-        return baseColW() * PEG_TIGHTEN;
+        return baseColW() * PEG_TIGHTEN_X;
+    }
+    function baseRowSp() {
+        return (pegBottom() - pegTop()) / ROWS;
     }
     function rowSp() {
-        return (pegBottom() - pegTop()) / ROWS;
+        return baseRowSp() * PEG_TIGHTEN_Y;
+    }
+    function pegFieldBottom() {
+        return pegTop() + rowSp() * ROWS;
     }
     function pegX(r, c) {
         return W / 2 + (c - r / 2) * colW();
