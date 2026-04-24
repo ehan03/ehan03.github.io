@@ -1,6 +1,6 @@
 (() => {
     const FOOTER_TEXT = 'vibe coded, idk how to web dev';
-    const LAST_UPDATED = 'Mar 15, 2026';
+    const LAST_UPDATED = 'Apr 23, 2026';
 
     const footer = document.getElementById('site-footer');
     if (!footer) return;
