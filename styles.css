@@ -185,6 +185,60 @@ canvas {
     margin-bottom: 48px;
 }
 
+.section-label--with-note {
+    position: relative;
+    display: inline-flex;
+    cursor: help;
+}
+
+.section-label-note {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: max-content;
+    max-width: min(92vw, 760px);
+    font-size: 10px;
+    letter-spacing: normal;
+    line-height: 1.5;
+    color: var(--muted);
+    text-transform: none;
+    white-space: nowrap;
+    background: var(--paper);
+    border: 0.5px solid var(--rule);
+    padding: 6px 8px;
+    opacity: 0;
+    transform: translateY(-2px);
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 3;
+}
+
+.section-label--with-note:hover .section-label-note,
+.section-label--with-note:focus .section-label-note,
+.section-label--with-note:focus-within .section-label-note {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (hover: none) {
+    .section-label--with-note {
+        display: block;
+    }
+
+    .section-label-note {
+        position: static;
+        width: auto;
+        max-width: none;
+        margin-top: 6px;
+        border: 0;
+        padding: 0;
+        opacity: 1;
+        transform: none;
+        white-space: normal;
+        pointer-events: auto;
+    }
+}
+
 article.writings p {
     line-height: 1.7;
 }
