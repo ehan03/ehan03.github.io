@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A brief filler post messing around with data on Yale's energy consumption</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <div class="site-wrap">
+        <section class="hero hero--single">
+            <div class="main-nav" aria-label="post navigation">
+                <a href="../">home</a>
+            </div>
+            <div>
+                <h1 class="hero-name">A brief filler post messing around with data on Yale's energy consumption</h1>
+                <p class="hero-role">Looking at some random data I stumbled across (excuse to try out
+                    <code>duckdb</code> and <code>bokeh</code>)
+                </p>
+                <p class="post-meta">Published <time datetime="2026-05-09">09 May 2026</time></p>
+            </div>
+        </section>
+
+        <article class="writings">
+            <p>I originally planned to reserve these write-ups for bigger, more fleshed-out projects. Turns out
+                those take a while, and grinding on the same thing for too long can become a bit much. So here's
+                something in the meantime.</p>
+
+            <p>I was poking around the web for project ideas and came across Yale's <a
+                    href="https://java.facilities.yale.edu/energy/" target="_blank" rel="noopener">Facility Energy Usage
+                    Explorer</a> tool. The site is a bit outdated, clunky to use, and only lets you
+                export monthly data from July 2020 onwards, but the underlying information was quite unique and I
+                couldn't find a clean, structured dataset aggregating it either on Kaggle or GitHub.</p>
+
+            <figure class="post-figure">
+                <img src="../assets/images/posts/yale-energy/website.png" alt="Yale Facility Energy Usage Explorer tool"
+                    loading="lazy" decoding="async" />
+                <figcaption>Screenshot of the landing page for the Yale Facility Energy Usage Explorer.
+                </figcaption>
+            </figure>
+
+            <p>Inspecting the fetch/XHR network requests revealed a few hidden endpoints which included params for
+                filtering on date ranges. This allowed me to get monthly energy consumption data by commodity for
+                various buildings on campus starting from July 2002 (an extra 18 years of history) along with some
+                metadata on each facility like coordinates and building type.</p>
+
+            <p>As hinted at in the post description, I had been meaning to explore <a href="https://duckdb.org/"
+                    target="_blank" rel="noopener noreferrer">DuckDB</a> and <a href="https://bokeh.org/"
+                    target="_blank" rel="noopener noreferrer">Bokeh</a> in general for data analysis and visualization.
+                You can find some of the plots I made below:
+            </p>
+
+            <figure class="post-figure">
+                <img src="../assets/images/posts/yale-energy/usage_by_commodity.png"
+                    alt="Energy usage by commodity type over time" loading="lazy" decoding="async" />
+                <figcaption>Energy usage by commodity type over time across all Yale facilities. There is some very
+                    clear seasonality in the summer and winter months. Also some weird spikes in 2013 and 2014.
+                </figcaption>
+            </figure>
+
+            <figure class="post-figure">
+                <img src="../assets/images/posts/yale-energy/yoy_overall.png"
+                    alt="Year-over-year energy usage across all Yale facilities" loading="lazy" decoding="async" />
+                <figcaption>Year-over-year change in overall consumption across all Yale facilities.
+                </figcaption>
+            </figure>
+
+            <figure class="post-figure">
+                <img src="../assets/images/posts/yale-energy/commodity_shares.png"
+                    alt="Share of energy consumption by commodity type" loading="lazy" decoding="async" />
+                <figcaption>Share of energy consumption by commodity type. I have no idea what "Gas 2 Equivalent" is but
+                    it seems to have taken a significant amount of share.
+                </figcaption>
+            </figure>
+
+            <figure class="post-figure">
+                <img src="../assets/images/posts/yale-energy/energy_intensity.png"
+                    alt="Energy intensity by commodity type" loading="lazy" decoding="async" />
+                <figcaption>Overall energy consumption per square foot. As a proxy for efficiency, this has been pretty
+                    much flat over recent years. Not surprised given how old a lot of the buildings are.
+                </figcaption>
+            </figure>
+
+            <figure class="post-figure">
+                <img src="../assets/images/posts/yale-energy/top_20_map.png"
+                    alt="Map of the top 20 energy consuming buildings on Yale's campus" loading="lazy"
+                    decoding="async" />
+                <figcaption>Map of the top 20 energy consuming buildings on Yale's campus. Admittedly, this is a pretty
+                    bad visualization lol I probably should have restricted to central campus but whatever.
+                </figcaption>
+            </figure>
+
+            <p>Overall, I found <code>bokeh</code> to be pretty clean and flexible, but I definitely had to vibecode
+                quite a bit having used <code>matplotlib</code>, <code>seaborn</code>, and <code>plotly</code> all these
+                years. I'm not sure if it's convinced me to make the switch, but then again I barely scratched the
+                surface in this mini exploration. On the other hand, I found <code>duckdb</code> to be super intuitive
+                to use and it just felt natural to query my CSVs directly using SQL, so I will definitely try to use it
+                in future projects.</p>
+        </article>
+
+        <footer id="site-footer"></footer>
+    </div>
+
+    <script src="../scripts/footer.js"></script>
+</body>
+
+</html>

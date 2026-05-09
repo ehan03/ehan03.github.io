@@ -38,6 +38,15 @@
                 <span class="section-label-note">disclaimer: all words, opinions, and work here are my own and do not
                     represent my employer</span>
             </div>
+            <a class="post-row" href="posts/yale-energy.html">
+                <span class="post-date">09 May 2026</span>
+                <div>
+                    <div class="post-title">A brief filler post messing around with data on Yale's energy consumption
+                    </div>
+                    <div class="post-desc">Looking at some random data I stumbled across (excuse
+                        to try out <code>duckdb</code> and <code>bokeh</code>)</div>
+                </div>
+            </a>
             <a class="post-row" href="posts/steam-dataset.html">
                 <span class="post-date">13 Mar 2026</span>
                 <div>
@@ -47,13 +56,19 @@
                         ingestion</div>
                 </div>
             </a>
+            <div class="post-pagination" aria-label="Post pagination">
+                <button class="page-btn" type="button" data-page="prev">prev</button>
+                <span class="page-status" aria-live="polite"></span>
+                <button class="page-btn" type="button" data-page="next">next</button>
+            </div>
         </section>
 
         <footer id="site-footer"></footer>
     </div>
 
-    <script src="galton.js"></script>
-    <script src="footer.js"></script>
+    <script src="scripts/galton.js"></script>
+    <script src="scripts/footer.js"></script>
+    <script src="scripts/pagination.js"></script>
 </body>
 
 </html>

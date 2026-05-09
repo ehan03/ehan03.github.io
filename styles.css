@@ -271,7 +271,7 @@ article.writings a:hover {
     border-color: var(--accent);
 }
 
-article.writings code {
+code {
     font-family: var(--mono);
     font-size: 0.92em;
     background: rgba(122, 120, 114, 0.1);
@@ -338,6 +338,39 @@ article.writings code {
     font-size: 11px;
     color: var(--muted);
     margin-top: 3px;
+}
+
+.post-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.page-btn {
+    background: transparent;
+    border: 0.5px solid var(--rule);
+    color: var(--muted);
+    padding: 4px 8px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.page-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.page-btn:disabled {
+    color: var(--faint);
+    border-color: var(--rule);
+    cursor: default;
 }
 
 .post-type {
