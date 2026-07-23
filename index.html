@@ -33,10 +33,15 @@
         </section>
 
         <section class="writings">
-            <div class="section-label section-label--with-note" tabindex="0">
+            <div class="section-label section-label--with-note">
                 <span>writing & tinkering</span>
-                <span class="section-label-note">disclaimer: all words, opinions, and work here are my own and do not
-                    represent my employer</span>
+                <button class="section-label-help" type="button" aria-expanded="false"
+                    aria-controls="section-disclaimer-popup">
+                    i
+                </button>
+                <div id="section-disclaimer-popup" class="section-label-note" role="dialog" aria-live="polite">
+                    disclaimer: all words, opinions, and work here are my own and do not represent my employer
+                </div>
             </div>
             <a class="post-row" href="posts/yale-energy.html">
                 <span class="post-date">09 May 2026</span>
@@ -69,6 +74,7 @@
     <script src="scripts/galton.js"></script>
     <script src="scripts/footer.js"></script>
     <script src="scripts/pagination.js"></script>
+    <script src="scripts/section-disclaimer.js"></script>
 </body>
 
 </html>

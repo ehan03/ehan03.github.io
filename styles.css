@@ -188,13 +188,40 @@ canvas {
 .section-label--with-note {
     position: relative;
     display: inline-flex;
-    cursor: help;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+}
+
+.section-label-help {
+    width: 14px;
+    height: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(122, 120, 114, 0.12);
+    color: var(--muted);
+    font-size: 8px;
+    font-style: italic;
+    font-family: var(--serif);
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.section-label-help:hover,
+.section-label-help.is-active {
+    color: var(--accent);
+    background: rgba(42, 107, 78, 0.1);
 }
 
 .section-label-note {
     position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
+    top: -6px;
+    left: calc(100% + 8px);
     width: max-content;
     max-width: min(92vw, 760px);
     font-size: 10px;
@@ -207,22 +234,24 @@ canvas {
     border: 0.5px solid var(--rule);
     padding: 6px 8px;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-2px);
     pointer-events: none;
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
     z-index: 3;
 }
 
-.section-label--with-note:hover .section-label-note,
-.section-label--with-note:focus .section-label-note,
-.section-label--with-note:focus-within .section-label-note {
+.section-label-note.is-visible {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
 @media (hover: none) {
     .section-label--with-note {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     .section-label-note {
@@ -233,6 +262,7 @@ canvas {
         border: 0;
         padding: 0;
         opacity: 1;
+        visibility: visible;
         transform: none;
         white-space: normal;
         pointer-events: auto;
