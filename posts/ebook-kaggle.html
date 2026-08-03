@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Winning a free e-book on Kaggle</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <div class="site-wrap">
+        <section class="hero hero--single">
+            <div class="main-nav" aria-label="post navigation">
+                <a href="../">← home</a>
+            </div>
+            <div>
+                <h1 class="hero-name">Winning a free e-book on Kaggle</h1>
+                <p class="hero-role">Free? In this economy? A small side quest in pursuit of approximately $20</p>
+                <p class="post-meta">Published <time datetime="2026-08-02">02 Aug 2026</time></p>
+            </div>
+        </section>
+
+        <article class="writings">
+            <p>This is going to be another shorter post, I've been pretty unmotivated to work on my bigger long-term
+                projects lately (I think my last commit to any of them was 3 months ago). Maybe next post though...</p>
+
+            <p>So around April, I came across a post from <a href="https://www.linkedin.com/in/carl-mcbride-ellis/"
+                    target="_blank" rel="noopener">Carl McBride Ellis</a>, a data scientist and I guess LinkedIn
+                influencer, about a small Kaggle competition he was running called <a
+                    href="https://www.kaggle.com/competitions/the-perfect-fit/overview">The Perfect Fit</a>. This
+                immediately caught my attention, as it seemed to be very different from the typical Kaggle competitions
+                in that it was more like a puzzle with the goal of trying to reverse engineer the data generation
+                process rather than the standard throwing the kitchen sink of fancy machine learning models at the
+                problem.</p>
+
+            <p>The contest ended a little over two weeks ago as of writing, and I was fortunate enough to (a) be 1 of 8
+                participants/teams out 68 total to successfully reverse engineer the problem, (b) actually place 1st
+                overall in terms of mean absolute error, and (c) win a free copy of <a
+                    href="https://leanpub.com/TOBoML2" target="_blank" rel="noopener">The Orange Book of Machine
+                    Learning (Green Edition)</a> based on my solution <a
+                    href="https://www.kaggle.com/competitions/the-perfect-fit/writeups/1st-place-solution"
+                    target="_blank" rel="noopener">write-up</a>.</p>
+
+            <p>I will attempt to briefly summarize the problem context and my approach at a high level.</p>
+
+            <p>The problem involved a small
+                synthetic tabular dataset with the following columns:
+                <code>id</code>,
+                <code>x1</code>, <code>x2</code>, <code>Country</code>, <code>City</code>, <code>x4</code>,
+                <code>x5</code>, <code>x6</code>, <code>x7</code>, <code>x8</code>, <code>x9</code>, <code>x10</code>,
+                <code>x11</code>, and <code>target</code>. The goal was to predict the <code>target</code> variable for
+                a test set.
+            </p>
+
+            <p>Through a mix of data exploration, partial dependence analysis, and common sense, you can figure out that
+                (a) <code>Country</code>, <code>x6</code>, and <code>x7</code> are completely useless, and (b) for
+                <code>id >= 100</code> and <code>x5 != 999</code> (<code>x5</code> was contaminated with sentinel
+                values), <code>target</code> is just a linear combination of the remaining features and a few simple
+                variables derived from them.
+            </p>
+
+            <p>For <code>x5 != 999</code>, it turns out that <code>x5 ~ Unif(7, 12)</code>, so you can actually brute
+                force the random seed that was used to generate the data to recover what the original <code>x5</code>
+                values were before some were replaced with <code>999</code>. The random seed ended up being 4242, so I
+                guess Hitchhiker's Deep Thought was onto something after all. The same linear equation applies to the
+                recovered <code>x5</code> values, so the problem is solved.</p>
+
+            <p>I ended up going a step further and brute forcing every possible parenthesization of the linear
+                combination as a labeled binary expression tree since floating point addition is not associative.
+                Completely unnecessary, but it did shave down some of the MAE resulting from floating point dust.</p>
+
+            <p>I'm slowly making my way through the e-book and so far it's been quite good. So I think participating in
+                the contest was pretty worth it.
+            </p>
+        </article>
+
+        <footer id="site-footer"></footer>
+    </div>
+
+    <script src="../scripts/footer.js"></script>
+</body>
+
+</html>
